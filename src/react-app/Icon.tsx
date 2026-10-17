@@ -106,11 +106,65 @@ const paths = {
 		</>
 	),
 	book: <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />,
+	building: (
+		<>
+			<rect x="4" y="2" width="16" height="20" rx="2" />
+			<path d="M9 22v-4h6v4" />
+			<path d="M8 6h.01" />
+			<path d="M16 6h.01" />
+			<path d="M8 10h.01" />
+			<path d="M16 10h.01" />
+			<path d="M8 14h.01" />
+			<path d="M16 14h.01" />
+		</>
+	),
+	scale: (
+		<>
+			<path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+			<path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+			<path d="M7 21h10" />
+			<path d="M12 3v18" />
+			<path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
+		</>
+	),
+	cpu: (
+		<>
+			<rect x="4" y="4" width="16" height="16" rx="2" />
+			<rect x="9" y="9" width="6" height="6" />
+			<path d="M15 2v2" />
+			<path d="M15 20v2" />
+			<path d="M2 15h2" />
+			<path d="M2 9h2" />
+			<path d="M20 15h2" />
+			<path d="M20 9h2" />
+			<path d="M9 2v2" />
+			<path d="M9 20v2" />
+		</>
+	),
+	zap: <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />,
+	star: <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />,
+	external: (
+		<>
+			<path d="M15 3h6v6" />
+			<path d="M10 14 21 3" />
+			<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+		</>
+	),
+	bot: (
+		<>
+			<rect x="3" y="11" width="18" height="10" rx="2" />
+			<circle cx="12" cy="5" r="2" />
+			<path d="M12 7v4" />
+			<line x1="8" y1="16" x2="8" y2="16" />
+			<line x1="16" y1="16" x2="16" y2="16" />
+		</>
+	),
 };
 
 export type IconName = keyof typeof paths;
 
 export function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
+	const iconContent = paths[name] || paths.sparkles;
 	return (
 		<svg
 			width={size}
@@ -123,7 +177,7 @@ export function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
 			strokeLinejoin="round"
 			aria-hidden
 		>
-			{paths[name]}
+			{iconContent}
 		</svg>
 	);
 }
