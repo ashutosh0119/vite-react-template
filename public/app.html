@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Pragvix Learn (Powered by SehatGraph Technologies)</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  
+  <div id="toast-container" class="toast-container"></div>
+  <div id="modal-container"></div>
+  
+  <!-- Mobile Sidebar Overlay -->
+  <div id="mobile-overlay" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(2,6,17,0.7); backdrop-filter:blur(6px); z-index:35;"></div>
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <img src="assets/images/pragvix_official_logo.png" alt="Pragvix" class="sidebar-brand-logo" style="margin-right: 12px;">
+        <div>
+          <span class="font-black text-lg" style="letter-spacing: 0.5px;">PRAGVIX <span class="text-primary">LEARN</span></span>
+          <div class="text-xs text-muted" style="font-size: 0.65rem; margin-top: -2px;">By SehatGraph Technologies</div>
+        </div>
+      </div>
+      <div class="sidebar-menu">
+        <a href="#home" class="sidebar-item active">
+          <span class="material-icons">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a href="#learn" class="sidebar-item">
+          <span class="material-icons">play_circle</span>
+          <span>My Courses</span>
+        </a>
+        <a href="#courses" class="sidebar-item">
+          <span class="material-icons">explore</span>
+          <span>All Courses</span>
+        </a>
+        <a href="#careers" class="sidebar-item">
+          <span class="material-icons">work</span>
+          <span>Careers & Jobs</span>
+        </a>
+        <a href="#profile" class="sidebar-item">
+          <span class="material-icons">person</span>
+          <span>Profile</span>
+        </a>
+        <a href="index.html" class="sidebar-item" style="margin-top: 1rem; border-top: 1px solid var(--card-border); padding-top: 1rem;">
+          <span class="material-icons">home</span>
+          <span>Public Website</span>
+        </a>
+      </div>
+      
+      <!-- User Mini Profile at bottom of sidebar -->
+      <div class="p-4 border-t border-card-border flex items-center justify-between" style="border-top: 1px solid var(--card-border);">
+        <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.hash='profile'">
+          <div class="avatar" style="width: 36px; height: 36px; font-size: 0.85rem;">AS</div>
+          <div>
+            <div class="text-xs font-bold" style="color: #FFFFFF;">Ashutosh singh</div>
+            <div class="text-xs text-muted" style="font-size: 0.7rem;">DTU • CSE</div>
+          </div>
+        </div>
+        <button onclick="logout()" title="Logout" style="background: transparent; border: none; color: var(--danger); cursor: pointer; display: flex; align-items: center;">
+          <span class="material-icons" style="font-size: 20px;">logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="top-bar">
+        <div class="flex items-center gap-3">
+          <button class="hamburger" onclick="toggleSidebar()" style="display: block;" aria-label="Toggle Navigation">
+            <span class="material-icons">menu</span>
+          </button>
+          <div class="text-xs text-muted hidden md:block">
+            Student Portal • <span class="text-success font-semibold">Online</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="material-icons text-secondary cursor-pointer hover:text-primary" onclick="renderToast('You have 2 new mentor notifications!')">notifications</span>
+          <div class="avatar cursor-pointer" onclick="window.location.hash='profile'">AS</div>
+        </div>
+      </div>
+      <div class="content-area" id="app-content">
+        <!-- Content loaded dynamically via JS -->
+      </div>
+    </main>
+    
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/courses.js"></script>
+  <script src="js/learn.js"></script>
+  <script src="js/careers.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

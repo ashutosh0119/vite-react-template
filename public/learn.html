@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pragvix Learn — Powered by SehatGraph Technologies Pvt. Ltd.</title>
+  <meta name="description" content="Master AI, Full-Stack, Cybersecurity & Cloud with 1-on-1 mentorship and hands-on capstone projects. Powered by SehatGraph Technologies Private Limited.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+  
+  <!-- Modal Container for Login & Course Details -->
+  <div id="modal-container"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-brand" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <img src="assets/images/pragvix_official_logo.png" alt="Pragvix Learn" class="brand-logo">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-black text-xl" style="letter-spacing: 0.5px;">PRAGVIX <span class="text-primary">LEARN</span></span>
+          </div>
+          <div class="text-xs text-muted" style="font-size: 0.68rem; margin-top: -3px; font-weight: 500;">
+            Powered by SehatGraph Technologies
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#courses">Courses</a>
+        <a href="#founders">Founders' Desk</a>
+        <a href="#about">About Us</a>
+        <a href="#terms">Terms & Legal</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="navbar-right">
+        <button id="auth-btn" class="btn btn-primary" onclick="handleAuthClick()">
+          <span class="material-icons" style="font-size: 18px;">lock</span>
+          <span>Login</span>
+        </button>
+        <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+          <span class="material-icons">menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <img src="assets/images/pragvix_official_logo.png" alt="Pragvix Official Logo" class="hero-logo-display animate-fadeIn">
+      
+      <div class="powered-badge animate-fadeIn">
+        <span class="material-icons" style="font-size: 16px;">verified</span>
+        <span>Powered by SehatGraph Technologies Private Limited</span>
+      </div>
+
+      <h1>Learn. Build. Master.<br>Your Tech Career Starts Here.</h1>
+      
+      <p>
+        India’s premier practical learning ecosystem for AI, Full-Stack, Cloud & Cybersecurity. 
+        Featuring production-grade capstone projects, 1-on-1 industry mentorship, and 
+        <strong style="color: #38BDF8;">verified industry certifications to launch your career</strong>.
+      </p>
+
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a href="#courses" class="btn btn-accent btn-lg">
+          <span class="material-icons">rocket_launch</span>
+          <span>Explore All Courses</span>
+        </a>
+        <a href="#founders" class="btn btn-outline btn-lg">
+          <span class="material-icons">people</span>
+          <span>Founders' Vision</span>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div><span class="stat-number" data-target="10000">0</span>+ Students Trained</div>
+        <div><span class="stat-number" data-target="15">0</span>+ In-Demand Tracks</div>
+        <div><span class="stat-number" data-target="50">0</span>+ Startup Mentors</div>
+        <div><span class="stat-number" data-target="500">0</span>+ Career Placements</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY PRAGVIX LEARN -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Why Choose Pragvix Learn?</h2>
+      <p class="section-subtitle animate-on-scroll">
+        Built by tech leaders to bridge the gap between college curricula and real industry expectations.
+      </p>
+      
+      <div class="features-grid">
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon-wrapper">
+            <span class="material-icons" style="font-size: 32px;">live_tv</span>
+          </div>
+          <h3>1-on-1 Mentorship</h3>
+          <p>Instant doubt resolution, code reviews, and weekly live office hours with senior software engineers.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll" style="animation-delay: 0.1s">
+          <div class="feature-icon-wrapper" style="color: #34D399; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3);">
+            <span class="material-icons" style="font-size: 32px;">terminal</span>
+          </div>
+          <h3>Production Projects</h3>
+          <p>Build scalable microservices, CTF vulnerability scanners, and AI agents rather than simple todo apps.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll" style="animation-delay: 0.2s">
+          <div class="feature-icon-wrapper" style="color: #FBBF24; background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3);">
+            <span class="material-icons" style="font-size: 32px;">verified_user</span>
+          </div>
+          <h3>QR Verified Certificates</h3>
+          <p>Industry-grade digital credentials issued under SehatGraph Technologies with cryptographic QR verification.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll" style="animation-delay: 0.3s">
+          <div class="feature-icon-wrapper" style="color: #38BDF8; background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.3);">
+            <span class="material-icons" style="font-size: 32px;">workspace_premium</span>
+          </div>
+          <h3>Career Assistance</h3>
+          <p>Technical interview prep, personalized portfolio architecture, and direct connects with hiring tech startups.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP & FOUNDERS' DESK SECTION -->
+  <section id="founders" class="founders-section">
+    <div class="container">
+      <div class="text-center">
+        <div class="badge badge-primary mb-2">Executive Leadership</div>
+        <h2 class="section-title animate-on-scroll">From the Founders' Desk</h2>
+        <p class="section-subtitle animate-on-scroll">
+          Pragvix Learn is driven by the leadership team of <strong>SehatGraph Technologies Private Limited</strong>.
+          Learn about the vision that powers our platforms.
+        </p>
+      </div>
+
+      <div class="founders-grid">
+        <!-- Founder 1: Ashutosh Singh -->
+        <div class="founder-card animate-on-scroll">
+          <div class="founder-header">
+            <div class="founder-avatar">AS</div>
+            <div class="founder-info">
+              <h3>Ashutosh Singh</h3>
+              <div class="founder-title">Founder & CEO</div>
+              <div class="founder-company">SehatGraph Technologies Pvt. Ltd. & Pragvix Learn</div>
+            </div>
+          </div>
+          <div class="founder-quote">
+            “Our vision with Pragvix Learn is simple yet audacious: to equip every passionate student in India with deep engineering excellence, architectural mastery, and the confidence to build software that shapes the future.”
+          </div>
+          <p class="founder-message">
+            Engineering is not about memorizing syntax; it is the art of solving real-world challenges with elegant, scalable technology. Through Pragvix Learn, we are creating a world-class ecosystem where students write production code from Day 1, learn under seasoned industry architects, and transform into top-tier tech innovators.
+          </p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="badge badge-primary">Founder & CEO</span>
+          </div>
+        </div>
+
+        <!-- Founder 2: Abhinav Mishra -->
+        <div class="founder-card animate-on-scroll" style="animation-delay: 0.15s">
+          <div class="founder-header">
+            <div class="founder-avatar" style="background: linear-gradient(135deg, #10B981 0%, #34D399 100%); border-color: rgba(52, 211, 153, 0.5);">AM</div>
+            <div class="founder-info">
+              <h3>Abhinav Mishra</h3>
+              <div class="founder-title">Co-Founder & Director</div>
+              <div class="founder-company">SehatGraph Technologies Pvt. Ltd. & Pragvix Learn</div>
+            </div>
+          </div>
+          <div class="founder-quote">
+            “India has the brightest young minds in the world. By bringing elite, industry-standard tech training within everyone’s reach, we are unlocking unprecedented opportunities for the next generation of builders.”
+          </div>
+          <p class="founder-message">
+            We founded Pragvix Learn to fundamentally elevate how technical skills are mastered. By combining intensive project-driven learning, personalized mentor guidance, and direct hiring bridges to high-growth tech startups, we ensure every learner is completely industry-ready.
+          </p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="badge badge-success">Co-Founder & Director</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corporate Affiliation Notice -->
+      <div class="card mt-8 p-6 text-center animate-on-scroll" style="background: rgba(13, 24, 50, 0.7); border-color: rgba(56, 189, 248, 0.3);">
+        <div class="flex items-center justify-center gap-2 mb-2">
+          <span class="material-icons text-primary">domain</span>
+          <h4 class="font-bold text-lg text-primary">Corporate Parent Entity</h4>
+        </div>
+        <p class="text-secondary text-sm max-width-800" style="max-width: 800px; margin: 0 auto;">
+          <strong>Pragvix Learn</strong> is wholly managed, operated, and powered by 
+          <strong>SehatGraph Technologies Private Limited</strong>. 
+          All course curricula, expert mentorship sessions, and verified digital certifications are administered under our corporate standards.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES SECTION -->
+  <section id="courses" class="courses-section">
+    <div class="container">
+      <div class="text-center mb-6">
+        <div class="badge badge-accent mb-2">In-Demand Tech Programs</div>
+        <h2 class="section-title animate-on-scroll">Explore All Courses</h2>
+        <p class="section-subtitle animate-on-scroll">
+          Click on any course to preview the detailed modular syllabus, capstone requirements, and mentor details.
+        </p>
+      </div>
+
+      <div class="filter-chips-row animate-on-scroll" id="landing-filters">
+        <!-- Filter chips rendered dynamically by landing.js -->
+      </div>
+
+      <div class="courses-grid animate-on-scroll" id="landing-courses-grid">
+        <!-- Course cards rendered dynamically by landing.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US SECTION -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="text-center mb-6">
+        <div class="badge badge-primary mb-2">Company Overview</div>
+        <h2 class="section-title animate-on-scroll">About Pragvix Learn</h2>
+      </div>
+
+      <div class="about-box animate-on-scroll">
+        <div class="text-left">
+          <p style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+            <strong>Pragvix Learn</strong> is India’s premier hands-on tech education and career ecosystem, proudly powered by <strong>SehatGraph Technologies Private Limited</strong>.
+          </p>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+            Our mission is to empower ambitious students and developers across Bharat with high-impact, real-world skills in Artificial Intelligence, Full-Stack Architecture, Cloud DevOps, and Offensive Cybersecurity.
+          </p>
+          <p style="font-size: 1.05rem; color: var(--text-secondary);">
+            Every student at Pragvix Learn trains on production environments with real code repositories, builds verified portfolio capstones, and receives continuous 1-on-1 mentorship from seasoned industry architects.
+          </p>
+        </div>
+
+        <div class="about-stats">
+          <div class="about-stat">
+            <strong>10K+</strong>
+            <span>Active Learners</span>
+          </div>
+          <div class="about-stat">
+            <strong>15+</strong>
+            <span>Industry Tracks</span>
+          </div>
+          <div class="about-stat">
+            <strong>50+</strong>
+            <span>Startup Mentors</span>
+          </div>
+          <div class="about-stat">
+            <strong>500+</strong>
+            <span>Career Placements</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMS & CONDITIONS / POLICIES / DISCLAIMERS -->
+  <section id="terms" class="terms-section">
+    <div class="container">
+      <div class="text-center mb-8">
+        <div class="badge badge-success mb-2">Transparency & Standards</div>
+        <h2 class="section-title animate-on-scroll">Terms of Service & Platform Policies</h2>
+        <p class="section-subtitle animate-on-scroll">
+          Clear, honest policies powered by SehatGraph Technologies Private Limited.
+        </p>
+      </div>
+
+      <div class="terms-content">
+        <!-- Lifetime Access & Mentorship Card -->
+        <div class="terms-card animate-on-scroll" style="border-top: 3px solid #10B981;">
+          <h3>
+            <span class="material-icons" style="color: #34D399;">school</span>
+            <span>Course Access & Mentorship Support</span>
+          </h3>
+          <p>
+            Enrolled students receive unlimited lifetime access to all recorded lecture modules, future curriculum updates, downloadable architectural blueprints, and resource materials. Dedicated 1-on-1 mentorship and doubt-clearing sessions remain active for 6 months from enrollment.
+          </p>
+        </div>
+
+        <!-- Placement Disclaimer Card -->
+        <div class="terms-card animate-on-scroll" style="border-top: 3px solid #F59E0B;">
+          <h3>
+            <span class="material-icons" style="color: #FBBF24;">gavel</span>
+            <span>Educational & Placement Disclaimer</span>
+          </h3>
+          <p>
+            Pragvix Learn is an educational training platform. While we provide verified startup internship listings, career mentorship, resume reviews, and direct interview opportunities through our startup partner network, we do <strong>not guarantee job placement or fixed salaries</strong>.
+            Final hiring decisions rest solely with prospective employers based on individual performance and merit.
+          </p>
+        </div>
+
+        <!-- Certified Credentials Card -->
+        <div class="terms-card animate-on-scroll" style="border-top: 3px solid #38BDF8;">
+          <h3>
+            <span class="material-icons" style="color: #38BDF8;">verified</span>
+            <span>Cryptographic Digital Certificates</span>
+          </h3>
+          <p>
+            All verified certificates issued by Pragvix Learn carry a unique Certificate ID and a cryptographic QR hash registered under SehatGraph Technologies Private Limited.
+            Employers and academic institutions can verify certificate authenticity online in real time.
+          </p>
+        </div>
+
+        <!-- Data Privacy Card -->
+        <div class="terms-card animate-on-scroll" style="border-top: 3px solid #A855F7;">
+          <h3>
+            <span class="material-icons" style="color: #C084FC;">security</span>
+            <span>Privacy & DPDP Compliance</span>
+          </h3>
+          <p>
+            Student data, phone numbers, and academic records are stored with high-level encryption in strict accordance with the Digital Personal Data Protection (DPDP) Act.
+            We strictly do not monetize, sell, or disclose personal details to external marketing agencies.
+          </p>
+        </div>
+
+        <!-- Practical Project Evaluation Card -->
+        <div class="terms-card animate-on-scroll" style="border-top: 3px solid #0284C7;">
+          <h3>
+            <span class="material-icons" style="color: #38BDF8;">code</span>
+            <span>Hands-on Capstone Evaluation</span>
+          </h3>
+          <p>
+            Each track includes real-world capstone assignments that are code-reviewed by our engineering mentors. Passing evaluations ensures that your portfolio meets current tech industry hiring benchmarks.
+          </p>
+        </div>
+
+        <!-- Corporate Governance Card -->
+        <div class="terms-card animate-on-scroll" style="border-top: 3px solid #EF4444;">
+          <h3>
+            <span class="material-icons" style="color: #F87171;">account_balance</span>
+            <span>Platform Governance</span>
+          </h3>
+          <p>
+            All course offerings, certifications, and operational policies are governed by the corporate standards of SehatGraph Technologies Private Limited.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="footer-section">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Parent Info -->
+        <div class="footer-col">
+          <div class="flex items-center gap-2 mb-2">
+            <img src="assets/images/pragvix_official_logo.png" alt="Pragvix" class="brand-logo" style="width: 36px; height: 36px; border-radius: 9px;">
+            <h3 style="margin-bottom: 0;">PRAGVIX LEARN</h3>
+          </div>
+          <p style="color: var(--text-primary); font-weight: 500; margin-bottom: 0.5rem;">
+            Powered by <strong>SehatGraph Technologies Private Limited</strong>
+          </p>
+          <p>
+            Bridging the academia-industry gap with high-impact software engineering, AI, and cybersecurity education.
+          </p>
+          <div class="mca-badge">
+            <span class="material-icons" style="font-size: 16px;">verified</span>
+            <span>CIN: U62099BR2026PTC086806</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="#courses">Course Catalog</a>
+          <a href="#founders">Founders' Desk</a>
+          <a href="#about">About Company</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#terms">Placement Disclaimer</a>
+          <a href="https://www.sehatgraph.com" target="_blank">SehatGraph Official ↗</a>
+        </div>
+
+        <!-- Col 3: Support & Contacts -->
+        <div class="footer-col">
+          <h4>Support & Contacts</h4>
+          <p>📧 <strong>Student Support:</strong><br><a href="mailto:support@pragvix.com" style="color: var(--primary-light);">support@pragvix.com</a></p>
+          <p>🏢 <strong>Corporate Inquiries:</strong><br><a href="mailto:contact@sehatgraph.com" style="color: var(--primary-light);">contact@sehatgraph.com</a></p>
+          <p>📞 <strong>Helpline / WhatsApp:</strong><br>+91 98765 43210</p>
+          <p>🕒 <strong>Hours:</strong> Mon – Sat: 9:00 AM – 7:00 PM IST</p>
+        </div>
+
+        <!-- Col 4: Registered Office & Legal -->
+        <div class="footer-col">
+          <h4>Registered Office</h4>
+          <p>
+            <strong>SehatGraph Technologies Pvt. Ltd.</strong><br>
+            22, Jamunaha, Maheshpur, Thana Kateya,<br>
+            Gopalganj, Chhitauna, Bihar, India – 841425
+          </p>
+          <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
+            CIN: U62099BR2026PTC086806
+          </p>
+
+          <!-- Small App Download Icons under Registered Office -->
+          <div style="margin-top: 0.9rem; padding-top: 0.75rem; border-top: 1px solid rgba(26, 42, 72, 0.6);">
+            <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.45rem; font-weight: 600;">Download Mobile App:</div>
+            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+              <!-- Google Play Small Icon Badge -->
+              <a href="https://play.google.com/store" target="_blank" title="Get it on Google Play" 
+                 style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.6rem; background: rgba(8, 15, 34, 0.95); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 6px; text-decoration: none; color: #FFFFFF; font-size: 0.7rem; transition: all 0.2s;"
+                 onmouseover="this.style.borderColor='rgba(56, 189, 248, 0.8)'; this.style.transform='translateY(-1px)'"
+                 onmouseout="this.style.borderColor='rgba(56, 189, 248, 0.35)'; this.style.transform='translateY(0)'">
+                <span class="material-icons" style="font-size: 15px; color: #34D399;">android</span>
+                <span>Play Store</span>
+              </a>
+
+              <!-- Apple App Store Small Icon Badge -->
+              <a href="https://apple.com/app-store" target="_blank" title="Download on App Store" 
+                 style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.6rem; background: rgba(8, 15, 34, 0.95); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 6px; text-decoration: none; color: #FFFFFF; font-size: 0.7rem; transition: all 0.2s;"
+                 onmouseover="this.style.borderColor='rgba(56, 189, 248, 0.8)'; this.style.transform='translateY(-1px)'"
+                 onmouseout="this.style.borderColor='rgba(56, 189, 248, 0.35)'; this.style.transform='translateY(0)'">
+                <span class="material-icons" style="font-size: 15px; color: #38BDF8;">apple</span>
+                <span>App Store</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025–2026 Pragvix Learn. A product of SehatGraph Technologies Private Limited. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/landing.js"></script>
+</body>
+</html>

@@ -23,4 +23,9 @@ app.post("/api/waitlist", async (c) => {
 	return c.json({ ok: true });
 });
 
+app.get("/app", (c) => c.redirect("/app.html"));
+app.get("/dashboard", (c) => c.redirect("/app.html"));
+app.get("/learn", (c) => c.redirect("/learn.html"));
+app.get("/courses", (c) => c.redirect("/learn.html#courses"));
+
 export default app;

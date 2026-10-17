@@ -300,8 +300,11 @@ function App() {
 						{navLink("learn", "Learn")}
 						{navLink("learn-to-earn", "Learn → Earn")}
 						{navLink("faq", "FAQ")}
-						<a href="#join" className="btn btn-small btn-primary">
-							Get early access
+						<a href="/learn.html" className="btn btn-small" style={{ background: "rgba(56, 189, 248, 0.15)", color: "#38bdf8", border: "1px solid rgba(56, 189, 248, 0.4)" }}>
+							Courses (77+) 🎓
+						</a>
+						<a href="/app.html" className="btn btn-small btn-primary">
+							Student App →
 						</a>
 					</nav>
 				</div>
@@ -333,8 +336,11 @@ function App() {
 								<a href="#join" className="btn btn-primary btn-lg" onClick={goJoin("hire")}>
 									Hire a developer <Icon name="arrow" size={18} />
 								</a>
-								<a href="#join" className="btn btn-ghost btn-lg" onClick={goJoin("learn")}>
-									Start learning
+								<a href="/learn.html" className="btn btn-ghost btn-lg">
+									Courses (77+) <Icon name="arrow" size={18} />
+								</a>
+								<a href="/app.html" className="btn btn-learn btn-lg">
+									Student App →
 								</a>
 							</div>
 							<ul className="trust reveal" style={d(320)}>
@@ -376,7 +382,7 @@ function App() {
 								Explore Digital <Icon name="arrow" size={16} />
 							</span>
 						</a>
-						<a href="#learn" className="path path-learn spot reveal" style={d(120)}>
+						<a href="/learn.html" className="path path-learn spot reveal" style={d(120)}>
 							<span className="path-icon">
 								<Icon name="book" size={22} />
 							</span>
@@ -384,7 +390,7 @@ function App() {
 							<h2>Technical skills that pay</h2>
 							<p>Hands-on courses in coding, web, app and backend development, guided by mentors.</p>
 							<span className="path-cta">
-								Explore Learn <Icon name="arrow" size={16} />
+								Explore 77+ Courses <Icon name="arrow" size={16} />
 							</span>
 						</a>
 					</div>
@@ -511,9 +517,12 @@ function App() {
 							))}
 						</div>
 
-						<div className="center reveal">
-							<a href="#join" className="btn btn-learn" onClick={goJoin("learn")}>
-								Start learning <Icon name="arrow" size={18} />
+						<div className="center reveal" style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+							<a href="/learn.html" className="btn btn-learn">
+								Explore All 77+ Courses <Icon name="arrow" size={18} />
+							</a>
+							<a href="/app.html" className="btn btn-ghost">
+								Open Student Dashboard →
 							</a>
 						</div>
 					</div>
