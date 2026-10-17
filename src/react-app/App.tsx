@@ -236,7 +236,10 @@ function Faq() {
 			{faqs.map((f, i) => {
 				const isOpen = open === i;
 				return (
-					<div key={f.q} className={isOpen ? "faq-item open reveal" : "faq-item reveal"} style={d(i * 60)}>
+					// `.reveal` sits on a wrapper whose className never changes, so React
+					// re-renders can't wipe the `.in` class the observer added.
+					<div key={f.q} className="reveal" style={d(i * 60)}>
+					<div className={isOpen ? "faq-item open" : "faq-item"}>
 						<button
 							className="faq-q"
 							aria-expanded={isOpen}
@@ -253,6 +256,7 @@ function Faq() {
 								<p>{f.a}</p>
 							</div>
 						</div>
+					</div>
 					</div>
 				);
 			})}
