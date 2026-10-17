@@ -10,7 +10,9 @@
 	--learn: #22d3a6;
 	--learn-soft: rgba(34, 211, 166, 0.14);
 	--radius: 16px;
-	--max: 1160px;
+	--radius-lg: 22px;
+	--max: 1180px;
+	--ease: cubic-bezier(0.22, 1, 0.36, 1);
 
 	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 	line-height: 1.6;
@@ -80,7 +82,13 @@ input {
 	*,
 	*::before,
 	*::after {
-		animation: none !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		animation-delay: 0ms !important;
 		transition: none !important;
+	}
+	.reveal {
+		opacity: 1 !important;
+		transform: none !important;
 	}
 }
